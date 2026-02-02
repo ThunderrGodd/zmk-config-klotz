@@ -1,0 +1,35 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "klotz.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &klotz_physical_layout;
+        /delete-property/ zmk,backlight;
+    };
+
+    mock_kscan: zmk_mock_kscan {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+
+    /* 동글에서 물리 센서 노드 비활성화 */
+    /delete-node/ sensors;
+
+    /* 비활성화된 kscan0을 참조하여 발생하는 컴파일 에러 방지 */
+    /delete-node/ soft_off_wakers;
+};
+
+&left_encoder { status = "disabled"; };
+&right_encoder { status = "disabled"; };
+
+&kscan0 {
+    status = "disabled";
+};
