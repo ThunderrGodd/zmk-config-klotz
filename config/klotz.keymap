@@ -24,13 +24,6 @@
 #define TVP1 4
 #define TVP2 5
 
-&mt {
-    quick-tap-ms = <100>;
-    global-quick-tap;
-    flavor = "tap-preferred";
-    tapping-term-ms = <170>;
-};
-
 &lt {
     tapping-term-ms = <170>;
     quick-tap-ms = <100>;
@@ -109,6 +102,17 @@
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
         };
+
+        HM: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Homerow_Mods";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <190>;
+            quick-tap-ms = <130>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -134,7 +138,7 @@
 
             bindings = <
 &kp Q       &kp W       &kp F        &kp P         &kp G        &kp J      &kp L            &kp U        &kp Y       &kp SEMI
-&mt LGUI A  &mt LALT R  &mt LCTRL S  &mt LSHFT T   &kp D        &kp H      &mt RSHFT N      &mt RCTRL E  &mt RALT I  &mt RGUI O
+&HM LGUI A  &HM LALT R  &HM LCTRL S  &HM LSHFT T   &kp D        &kp H      &HM RSHFT N      &HM RCTRL E  &HM RALT I  &HM RGUI O
 &kp Z       &kp X       &kp C        &kp V         &kp B        &kp K      &kp M            &kp COMMA    &kp DOT     &kp FSLH
                                      &lt 1 ESCAPE  &lt 2 SPACE  &lt 4 RET  &lt 3 BACKSPACE
             >;
