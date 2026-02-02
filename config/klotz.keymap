@@ -276,7 +276,7 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-&bootloader        &kp LS(I)     &kp LS(HOME)  &kp LS(O)     &kp LS(F)     &trans  &trans  &trans  &trans  &trans
+&bootloader        &kp LS(I)     &kp LS(HOME)  &sys_reset    &kp LS(F)     &trans  &trans  &trans  &trans  &trans
 &ext_power EP_TOG  &kp LS(LEFT)  &out OUT_USB  &out OUT_BLE  &out OUT_TOG  &trans  &trans  &trans  &trans  &trans
 &kp J              &kp LS(C)     &kp LC(F16)   &kp LS(V)     &kp LC(F15)   &trans  &trans  &trans  &trans  &trans
                                                &kp LC(F12)   &kp LC(F11)   &trans  &trans
